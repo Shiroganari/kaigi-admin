@@ -1,0 +1,60 @@
+//----------//
+// .sidebar //
+//----------//
+.sidebar
+    position: fixed
+    top: 0
+    left: 0
+    width: 80px
+    height: 100%
+    background-color: #242323
+    transition: all 0.3s ease
+
+    &:hover
+        width: 250px
+
+        .sidebar__link span
+            opacity: 1
+
+        .sidebar__icon
+            opacity: 1
+
+    &__nav
+        height: 100%
+
+    &__list
+        display: flex
+        flex-direction: column
+        justify-content: center
+        height: 100%
+        margin: 0
+        padding: 0
+        list-style-type: none
+
+
+    &__link
+        display: flex
+        align-items: center
+        width: 100%
+        padding-left: 10px
+        font-size: 1.2em
+        color: #fff
+        text-decoration: none
+        transition: all 0.3s ease
+
+        &:hover
+            text-decoration: underline
+
+        span
+            transition: all 0.3s ease
+            opacity: 0
+
+    &__icon
+        min-width: 50px
+        min-height: 50px
+        margin-right: 10px
+        font-size: 1.5em
+        text-align: center
+        color: #fff
+        opacity: 0.8
+        transition: all 0.3s ease
