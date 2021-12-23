@@ -1,0 +1,21 @@
+<div class="user-item" *ngFor="let user of users">
+    <div class="user-item__avatar">
+        <img class="user-item__img" src="assets/images/avatar.png" alt="User Picture">
+    </div>
+
+    <div class="user-item__information">
+        <div class="user-item__name">
+            {{user.first_name}} {{user.last_name}}
+        </div>
+
+        <div class="user-item__username">
+            {{user.username}}
+        </div>
+
+        <div class="user-item__location">
+            {{user?.location_country}} {{user?.location_city}}
+        </div>
+
+        <input type="text" [value]="user.id" hidden>
+    </div>
+</div>
