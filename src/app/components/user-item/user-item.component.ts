@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { UsersDataService } from '../../services/users-data.service';
 
 @Component({
@@ -9,13 +9,9 @@ import { UsersDataService } from '../../services/users-data.service';
 })
 
 export class UserItemComponent {
-    users: any;
+    @Input() users: any;
 
-    constructor(private userData:UsersDataService) {
-        this.userData.getUsers().subscribe((data) => {
-            this.users = data;
-        })
-    }
+    constructor(private userData: UsersDataService) {}
 
     blockUser(userID: number) {
         let userData = {
