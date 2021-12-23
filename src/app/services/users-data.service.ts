@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Injectable({
     providedIn: 'root'
@@ -8,8 +8,9 @@ import { HttpClient } from '@angular/common/http';
 export class UsersDataService {
     constructor(private http:HttpClient) { }
 
-    getUsers() {
-        return this.http.get('http://kaigi.loc/users');
+    getUsers(name?: string) {
+        const params = new HttpParams().append('name', name!);
+        return this.http.get('http://kaigi.loc/users', { params: params });
     }
 
     blockUser(userData: object) {

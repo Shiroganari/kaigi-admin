@@ -10,10 +10,22 @@ import { UsersDataService } from '../../services/users-data.service';
 
 export class UsersComponent {
     users: any;
+    isUsersExist!: boolean;
 
     constructor(private userData:UsersDataService) {
-        this.userData.getUsers().subscribe((data) => {
+        this.getUsers();
+    }
+
+    getUsers(value?: string): void {
+        this.userData.getUsers(value).subscribe((data) => {
             this.users = data;
+
+            if (Object.keys(data).length === 0) {
+                this.isUsersExist = false;
+                return;
+            }
+
+            this.isUsersExist = true;
         })
     }
 }

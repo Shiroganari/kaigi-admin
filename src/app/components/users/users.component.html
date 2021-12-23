@@ -1,6 +1,14 @@
 <div class="users">
     <div class="container">
-        <div class="users__inner">
+        <div class="users-header">
+            <h1 class="users-header__title">Пользователи сайта</h1>
+            <input #myInput type="text" (input)="getUsers(myInput.value)"
+            class="users__input w-50 p-3"
+            placeholder="Введите имя, фамилию или никнейм пользователя">
+        </div>
+
+        <div class="users-content d-flex justify-content-center align-items-center w-100">
+            <div class="no-users" [hidden]='isUsersExist'>Список пользователей пуст :C</div>
             <app-user-item [users]="users"></app-user-item>
         </div>
     </div>
