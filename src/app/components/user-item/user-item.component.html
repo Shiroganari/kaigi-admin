@@ -18,4 +18,8 @@
 
         <input type="text" [value]="user.id" hidden>
     </div>
+
+    <button class="user-item__block" (click)="blockUser(user.id)" title="Заблокировать пользователя">
+        <i class="user-item__block-button fa fa-ban"></i>
+    </button>
 </div>

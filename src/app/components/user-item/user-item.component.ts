@@ -16,4 +16,14 @@ export class UserItemComponent {
             this.users = data;
         })
     }
+
+    blockUser(userID: number) {
+        let userData = {
+            userID: userID
+        }
+
+        this.userData.blockUser(userData).subscribe((data) => {
+            console.log(data);
+        })
+    }
 }

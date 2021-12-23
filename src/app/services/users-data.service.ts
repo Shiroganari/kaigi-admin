@@ -11,4 +11,8 @@ export class UsersDataService {
     getUsers() {
         return this.http.get('http://kaigi.loc/users');
     }
+
+    blockUser(userData: object) {
+        return this.http.post('http://kaigi.loc/users/block', userData);
+    }
 }
