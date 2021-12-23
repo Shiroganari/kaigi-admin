@@ -18,8 +18,9 @@ export class UserItemComponent {
             userID: userID
         }
 
-        this.userData.blockUser(userData).subscribe((data) => {
-            console.log(data);
-        })
+        if (confirm('Вы действительно хотите заблокировать данного пользователя?')) {
+            this.userData.blockUser(userData).subscribe((data) => {
+            })
+        }
     }
 }
