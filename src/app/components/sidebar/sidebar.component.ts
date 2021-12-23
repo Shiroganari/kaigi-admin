@@ -1,6 +1,4 @@
 import { Component} from '@angular/core'
-import { faUsers } from '@fortawesome/free-solid-svg-icons'
-
 
 @Component({
     selector: 'sidebar',
@@ -9,5 +7,4 @@ import { faUsers } from '@fortawesome/free-solid-svg-icons'
 })
 
 export class SidebarComponent {
-    usersIcon = faUsers;
 }

@@ -15,6 +15,7 @@
 
         .sidebar__link span
             opacity: 1
+            visibility: visible
 
         .sidebar__icon
             opacity: 1
@@ -31,7 +32,6 @@
         padding: 0
         list-style-type: none
 
-
     &__link
         display: flex
         align-items: center
@@ -43,13 +43,19 @@
         transition: all 0.3s ease
 
         &:hover
-            text-decoration: underline
+
+            span
+                text-decoration: underline
 
         span
             transition: all 0.3s ease
             opacity: 0
+            visibility: hidden
 
     &__icon
+        display: flex
+        justify-content: center
+        align-items: center
         min-width: 50px
         min-height: 50px
         margin-right: 10px
