@@ -21,6 +21,10 @@
             </div>
         </div>
 
+        <div class="user-item__date-registration">
+            {{user.date_registration}}
+        </div>
+
         <div class="user-item__status" *ngIf="user.status == 3; else activeUser">Заблокирован</div>
 
         <ng-template #activeUser>
