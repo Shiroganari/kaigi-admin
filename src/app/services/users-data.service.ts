@@ -13,7 +13,7 @@ export class UsersDataService {
         return this.http.get('http://kaigi.loc/users', { params: params });
     }
 
-    blockUser(userData: object) {
-        return this.http.post('http://kaigi.loc/users/block', userData);
+    changeUserStatus(userData: any) {
+        return this.http.post('http://kaigi.loc/users/changeUserStatus', userData);
     }
 }

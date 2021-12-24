@@ -13,13 +13,30 @@
         </div>
 
         <div class="user-item__location">
-            {{user?.location_country}} {{user?.location_city}}
+            <div class="user-item__country" *ngIf="user.location_country !== ''">
+                {{user.location_country}}
+            </div>
+            <div class="user-item__city" *ngIf="user.location_city !== ''">
+                , {{user.location_city}}
+            </div>
         </div>
 
-        <input type="text" [value]="user.id" hidden>
+        <div class="user-item__status" *ngIf="user.status == 3; else activeUser">Заблокирован</div>
+
+        <ng-template #activeUser>
+            <div class="user-item__status--active">Активный</div>
+        </ng-template>
     </div>
 
-    <button class="user-item__block" (click)="blockUser(user.id)" title="Заблокировать пользователя">
+
+    <button class="user-item__block" (click)="changeUserStatus(user)" title="Заблокировать пользователя"
+    *ngIf='user.status != 3; else unblockButton'>
         <i class="user-item__block-button fa fa-ban"></i>
     </button>
+
+    <ng-template #unblockButton>
+        <button class="user-item__unblock" (click)="changeUserStatus(user)" title="Разблокировать пользователя">
+            <i class="user-item__unblock-button fa fa-unlock"></i>
+        </button>
+    </ng-template>
 </div>

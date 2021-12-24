@@ -13,14 +13,25 @@ export class UserItemComponent {
 
     constructor(private userData: UsersDataService) {}
 
-    blockUser(userID: number) {
+    changeUserStatus(user: any) {
+        let newStatusID = user.status == 2 ? 3 : 2;
+
         let userData = {
-            userID: userID
+            userID: user.id,
+            userStatus: newStatusID
         }
 
-        if (confirm('Вы действительно хотите заблокировать данного пользователя?')) {
-            this.userData.blockUser(userData).subscribe((data) => {
-            })
+        let promptText = 'Вы действительно хотите заблокировать данного пользователя?';
+
+        if (newStatusID == 2) {
+            promptText = 'Вы действительно хотите разблокировать данного пользователя?';
         }
+
+        if (confirm(promptText)) {
+            this.userData.changeUserStatus(userData).subscribe((data) => {})
+            return user.status = newStatusID;
+        }
+
+        return;
     }
 }

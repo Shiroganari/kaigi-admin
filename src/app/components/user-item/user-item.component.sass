@@ -40,9 +40,18 @@
         text-transform: uppercase
 
     &__location
+        display: flex
+        justify-content: space-between
         font-size: 0.9em
 
-    &__block
+    &__status
+        color: #bb0e0e
+
+        &--active
+            color: #24884a
+
+    &__block,
+    &__unblock
         position: absolute
         top: 0
         right: 0
@@ -56,8 +65,9 @@
             .user-item__block-button
                 color: red
 
+            .user-item__unblock-button
+                color: green
+
         &-button
             font-size: 30px
             transition: color 0.3s ease
-
-
